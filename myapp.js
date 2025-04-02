@@ -10,6 +10,8 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// server ka public file ko allow krwana chalane ke liye
+app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index");
 });
