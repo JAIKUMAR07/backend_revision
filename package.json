@@ -1,0 +1,23 @@
+{
+  "name": "backend_revision",
+  "version": "1.0.0",
+  "description": "this is contain my learning code which is during my revising the backend concept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAIKUMAR07/backend_revision.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAIKUMAR07/backend_revision/issues"
+  },
+  "homepage": "https://github.com/JAIKUMAR07/backend_revision#readme",
+  "dependencies": {
+    "cat-me": "^1.0.3"
+  }
+}
