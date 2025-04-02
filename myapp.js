@@ -1,13 +1,16 @@
 const express = require("express");
-// ab ye as a tool box ajata hai but iske udner ka tool ko use krne ke liye hume
-// ise call krna padta padta hai
 
 const app = express();
-// to ye us box ko open kr rha hai call krke
+
+app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.render("index");
 });
-app.get("/adress", (req, res) => {
-  res.send("hello world raipur se ");
+1;
+
+app.get("/a", (req, res) => {
+  res.render("index", { siteName: "My Awesome Site", userName: "John" });
 });
+
+app.listen(3000);
