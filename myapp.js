@@ -1,26 +1,13 @@
-const http = require("http");
-// http ko variable me store
+const express = require("express");
+// ab ye as a tool box ajata hai but iske udner ka tool ko use krne ke liye hume
+// ise call krna padta padta hai
 
-// server create
-const server = http.createServer((req, res) => {
-  // server me req aaya to send
+const app = express();
+// to ye us box ko open kr rha hai call krke
 
-  // bar bar request jayega server me to server me kon sa url hai wo print hoga console
-  // ke through
-  console.log(req.url);
-
-  if (req.url == "/about") {
-    res.end("mein to about me hu");
-  }
-  if (req.url == "/contact") {
-    res.end("mein to contact me hu");
-  }
-
-  if (req.url == "/*") {
-    res.end(" pta nhi kaha hu ");
-  }
-  // us server me response
+app.get("/", (req, res) => {
+  res.send("hello world");
 });
-
-// ye server ko yaha se  dekhnge
-server.listen(3001);
+app.get("/adress", (req, res) => {
+  res.send("hello world raipur se ");
+});
