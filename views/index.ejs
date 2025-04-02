@@ -8,7 +8,15 @@
   <body>
     <h1>ye to web page hai</h1>
 
-    <h1>Welcome to <%= siteName %></h1>
-    <p>Hello <%= userName %>, glad to see you!</p>
+    <!-- by default ye get method hit krta isliye  method post dena hota  -->
+    <form action="get-form-data" method="post">
+      <input type="text" placeholder="enter username " name="username " />
+
+      <input type="text" placeholder="enter email" name="email" />
+
+      <input type="password" placeholder="enter password " name="pasword" />
+
+      <button>submit</button>
+    </form>
   </body>
 </html>
