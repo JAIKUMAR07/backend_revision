@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const dbConnection = require("./config/db");
+const userModel = require("./models/user");
 
 app.use(morgan("dev"));
 
@@ -12,12 +14,33 @@ app.use(express.urlencoded({ extended: true }));
 
 // server ka public file ko allow krwana chalane ke liye
 app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   res.render("index");
 });
 
 app.get("/about", (req, res) => {
-  res.render("about page ");
+  res.send("about page ");
+});
+
+app.get("/profile", (req, res) => {
+  res.send("prfile page ");
+});
+
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+// data lena is path se
+app.post("/register", async (req, res) => {
+  const { username, email, password } = req.body;
+  // user model se schema lena the n
+  const newUser = await userModel.create({
+    username: username,
+    email: email,
+    password: password,
+  });
+  res.send(newUser); // jo variable hai
 });
 
 app.post("/get-form-data", (req, res) => {
