@@ -33,14 +33,45 @@ app.get("/register", (req, res) => {
 
 // data lena is path se
 app.post("/register", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { userName, email, password } = req.body;
   // user model se schema lena the n
   const newUser = await userModel.create({
-    username: username,
+    userName: userName,
     email: email,
     password: password,
   });
   res.send(newUser); // jo variable hai
+});
+
+app.get("/get-users", async (req, res) => {
+  userModel
+    .find({
+      email: "aaa",
+    })
+    .then((users) => {
+      res.send(users);
+    });
+});
+app.get("/update-user", async (req, res) => {
+  await userModel.findOneAndUpdate(
+    //finding
+    {
+      userName: "aaa",
+    },
+    //updating
+    {
+      userName: "dddd",
+    }
+  );
+
+  res.send("updated user");
+});
+
+app.get("/delete-user", async (req, res) => {
+  await userModel.findOneAndDelete({
+    userName: "dddd",
+  });
+  res.send("deleted  user");
 });
 
 app.post("/get-form-data", (req, res) => {

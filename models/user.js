@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // just schema create kiye hai
 const userSchema = new mongoose.Schema({
-  username: String,
+  userName: String,
   email: String,
   password: String,
   age: Number,
