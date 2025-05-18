@@ -1,28 +1,25 @@
 {
-  "name": "backend_revision",
+  "name": "chapter-10---airbnb",
   "version": "1.0.0",
-  "description": "this is contain my learning code which is during my revising the backend concept",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JAIKUMAR07/backend_revision.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JAIKUMAR07/backend_revision/issues"
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.5.3"
   },
-  "homepage": "https://github.com/JAIKUMAR07/backend_revision#readme",
   "dependencies": {
-    "cat-me": "^1.0.3",
+    "@tailwindcss/cli": "^4.1.7",
+    "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "mongoose": "^8.13.1",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {}
+    "express": "^4.21.0",
+    "tailwindcss": "^4.1.7"
+  }
 }

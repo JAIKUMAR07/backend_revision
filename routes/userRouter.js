@@ -1,12 +1,12 @@
-const express = require("express");
-// core module
+// Core Modules
 const path = require("path");
 
-const rootDir = require("../config/utils/pathUtil");
+// External Module
+const express = require("express");
 const userRouter = express.Router();
+const homesController = require("../controllers/homes");
 
-userRouter.get("/", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "home.html"));
-});
+// Use the getHomes controller for the root route
+userRouter.get("/", homesController.getHomes);
 
 module.exports = userRouter;
