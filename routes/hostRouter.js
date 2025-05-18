@@ -1,16 +1,9 @@
-const path = require("path");
 const express = require("express");
-const hostRouter = express.Router();
-const homesController = require("../controllers/homes");
+const router = express.Router();
+const hostController = require("../controllers/hostController");
 
-hostRouter.get("/add-home", homesController.getAddHomes);
-hostRouter.post("/add-home", homesController.postAddHome);
-hostRouter.get("/home-added", (req, res) => {
-  res.render("homeAdded", { 
-    pageTitle: "Home Added Successfully" 
-  });
-});
+router.get("/add-home", hostController.getAddHome);
+router.post("/add-home", hostController.postAddHome);
+router.get("/host-home-list", hostController.getHostHomes);
 
-module.exports = {
-  hostRouter
-};
+module.exports = router; // Export the router directly, not as an object
